@@ -18,3 +18,7 @@ def test_login_form():
     login_button.click()
 
     time.sleep(5)
+    assert driver.current_url == "https://www.saucedemo.com/inventory.html"
+
+    driver.quit()
+
