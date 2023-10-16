@@ -8,6 +8,8 @@ def test_login_form():
 
     driver.get("https://www.saucedemo.com/")
 
+    url_before = driver.current_url
+
     username_field = driver.find_element(By.XPATH, '//input[@data-test="username"]')
     username_field.send_keys('standard_user')
 
@@ -16,9 +18,15 @@ def test_login_form():
 
     login_button = driver.find_element(By.XPATH, '//input[@data-test="login-button"]')
     login_button.click()
+    time.sleep(3)
 
-    time.sleep(5)
-    assert driver.current_url == "https://www.saucedemo.com/inventory.html"
+    burger_menu = driver.find_element(By.ID, 'react-burger-menu-btn')
+    burger_menu.click()
 
-    driver.quit()
+    logout = driver.find_element(By.CSS_SELECTOR, '#logout_sidebar_link')
+    logout.click()
+
+    url_after = driver.current_url
+
+    assert url_before == url_after
 
