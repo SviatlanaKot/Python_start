@@ -19,7 +19,7 @@ def test_login_form():
 
     time.sleep(5)
 
-    text_before = driver.find_element(By.CSS_SELECTOR, 'a[id="item_4_title_link"] > div[class="inventory_item_name"]').text
+    text_before = driver.find_element(By.CSS_SELECTOR, 'a[id="item_4_title_link"]').text
 
     button = driver.find_element(By.CSS_SELECTOR, 'button[data-test="add-to-cart-sauce-labs-backpack"]')
     button.click()
@@ -29,5 +29,5 @@ def test_login_form():
     cart.click()
     time.sleep(3)
 
-    text_after = driver.find_element(By.CSS_SELECTOR, 'a[id="item_4_title_link"] > div[class="inventory_item_name"]').text
+    text_after = driver.find_element(By.CSS_SELECTOR, 'a[id="item_4_title_link"]').text
     assert text_before == text_after
