@@ -27,7 +27,7 @@ def test_login_form(driver):
 
     driver.get(MAIN_PAGE)
     driver.find_element(selenium.webdriver.common.by.By.XPATH, USERNAME_FIELD).send_keys(LOGIN)
-    driver.find_element(selenium.webdriver.common.by.By.XPATH, PASSWORD_FIELD).send.keys(PASSWORD)
+    driver.find_element(selenium.webdriver.common.by.By.XPATH, PASSWORD_FIELD).send_keys(PASSWORD)
     driver.find_element(selenium.webdriver.common.by.By.XPATH, LOGIN_BUTTON).click()
 
     time.sleep(5)
