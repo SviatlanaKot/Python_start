@@ -4,8 +4,8 @@ import time
 
 driver = webdriver.Chrome()
 
-def test_login_form():
 
+def test_login_form():
     driver.get("https://www.saucedemo.com/")
 
     url_before = driver.current_url
@@ -32,10 +32,7 @@ def test_login_form():
     button_remove.click()
     time.sleep(3)
 
-    assert len(driver.find_element(By.CSS_SELECTOR, 'div[class="cart_list"]')) == 0
-
-
-
-
-
+    # assert len(driver.find_element(By.CSS_SELECTOR, 'div[class="cart_list"]')) == 0
+    # assert len(driver.find_element(By.CSS_SELECTOR, 'div.removed_cart_item')) == 0
+    assert driver.find_element(By.CSS_SELECTOR, 'div.removed_cart_item')
 
