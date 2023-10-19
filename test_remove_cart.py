@@ -32,6 +32,9 @@ def test_login_form():
     button_remove.click()
     time.sleep(3)
 
+    assert len(driver.find_element(By.CSS_SELECTOR, 'div[class="cart_list"]')) == 0
+
+
 
 
 

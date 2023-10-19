@@ -18,14 +18,15 @@ def test_login_form():
     login_button.click()
     time.sleep(3)
 
-    text_before = driver.find_element(By.CSS_SELECTOR, 'a[id="item_4_title_link"] >  div[class="inventory_item_name"]').text
+    text_before = driver.find_element(By.ID, 'item_4_title_link').text
 
     img = driver.find_element(By.CSS_SELECTOR, 'img[alt="Sauce Labs Backpack"]')
     img.click()
     time.sleep(3)
 
-    text_after = driver.find_element(By.CSS_SELECTOR,'a[id="item_4_title_link"] > div[class="inventory_item_name"]').text
+    text_after = driver.find_element(By.CLASS_NAME,'inventory_details_name large_size').text
     assert text_before == text_after
+    
 
 
 
