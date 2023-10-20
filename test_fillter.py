@@ -3,23 +3,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 import time
 
-driver = webdriver.Chrome()
 
-def test_login_form():
-
-    driver.get("https://www.saucedemo.com/")
-
-    url_before = driver.current_url
-
-    username_field = driver.find_element(By.XPATH, '//input[@data-test="username"]')
-    username_field.send_keys('standard_user')
-
-    password_field = driver.find_element(By.XPATH, '//input[@data-test="password"]')
-    password_field.send_keys('secret_sauce')
-
-    login_button = driver.find_element(By.XPATH, '//input[@data-test="login-button"]')
-    login_button.click()
-    time.sleep(3)
+def test_login_form(driver, auth):
 
     items_before = driver.find_elements(By.CSS_SELECTOR, 'div.inventory_item_name')
     print(len(items_before))
